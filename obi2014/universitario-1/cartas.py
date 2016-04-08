@@ -1,4 +1,4 @@
-# status: tested
+# status: testada com exemplos da prova
 
 if __name__ == '__main__':
     is_desc = False

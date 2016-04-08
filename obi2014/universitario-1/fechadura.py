@@ -1,4 +1,4 @@
-# status: bad
+# status: testada com exemplos da prova
 
 def is_open(pins, ideal_height):
     for pin in pins:
