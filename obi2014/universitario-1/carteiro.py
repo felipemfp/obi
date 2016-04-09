@@ -1,4 +1,4 @@
-# status: testada com exemplos da prova
+# status: testado com exemplos da prova
 
 if __name__ == '__main__':
     st_line = [int(x) for x in input().strip().split(' ')]

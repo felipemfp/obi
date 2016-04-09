@@ -1,4 +1,4 @@
-# status: testada com exemplos da prova
+# status: testado com exemplos da prova
 
 if __name__ == '__main__':
     size = input().strip().split(' ')

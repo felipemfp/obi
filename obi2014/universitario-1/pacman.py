@@ -1,4 +1,4 @@
-# status: testada com exemplos da prova
+# status: testado com exemplos da prova
 
 def walk(pacman, side):
     if pacman[0] % 2:
