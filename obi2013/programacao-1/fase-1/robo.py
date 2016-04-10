@@ -1,19 +1,19 @@
 # status: testado com exemplos da prova
 
-def mover(tabela, linha, coluna):
-    if not linha == 0:
-        if tabela[linha - 1][coluna] == 1:
-            return linha - 1, coluna
-    if not coluna == len(tabela[0]) - 1:
-        if tabela[linha][coluna + 1] == 1:
-            return linha, coluna + 1
-    if not linha == len(tabela) - 1:
-        if tabela[linha + 1][coluna] == 1:
-            return linha + 1, coluna
-    if not coluna == 0:
-        if tabela[linha][coluna - 1] == 1:
-            return linha, coluna - 1
-    return linha, coluna
+def move(map, line, column):
+    if not line == 0:
+        if map[line - 1][column] == 1:
+            return line - 1, column
+    if not column == len(map[0]) - 1:
+        if map[line][column + 1] == 1:
+            return line, column + 1
+    if not line == len(map) - 1:
+        if map[line + 1][column] == 1:
+            return line + 1, column
+    if not column == 0:
+        if map[line][column - 1] == 1:
+            return line, column - 1
+    return line, column
 
 
 if __name__ == '__main__':
@@ -21,19 +21,19 @@ if __name__ == '__main__':
     il, ic = map(int, input().split(' '))
     il -= 1
     ic -= 1
-    mapa = []
+    map = []
 
     for x in range(L):
-        mapa.append([int(v) for v in input().split(' ')])
+        map.append([int(v) for v in input().split(' ')])
 
-    chegou = False
-    while not chegou:
-        nl, nc = mover(mapa, il, ic)
+    finished = False
+    while not finished:
+        nl, nc = move(map, il, ic)
 
         if nl == il and nc == ic:
-            chegou = True
+            finished = True
         else:
-            mapa[il][ic] = 0
+            map[il][ic] = 0
             il = nl
             ic = nc
 
