@@ -25,7 +25,6 @@ if __name__ == '__main__':
             if highway == None:
                 result = False
                 break
-            print(current[:1], highway)
             highways.remove(highway)
             current.append(highway[1])
 
