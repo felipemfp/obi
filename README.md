@@ -18,3 +18,6 @@
   - Nível 1
     - [Primeira Fase](/obi2013/programacao-1/fase-1)
     - [Segunda Fase](/obi2013/programacao-1/fase-2)
+  - Nível 2
+    - [Primeira Fase](/obi2013/programacao-2/fase-1)
+    - [Segunda Fase](/obi2013/programacao-2/fase-2)
