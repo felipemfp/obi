@@ -21,3 +21,13 @@
   - Nível 2
     - [Primeira Fase](/obi2013/programacao-2/fase-1)
     - [Segunda Fase](/obi2013/programacao-2/fase-2)
+
+### OBI2012
+- Modalidade Programação
+  - Nível 1
+    - [Primeira Fase](/obi2012/programacao-1/fase-1)
+    - Segunda Fase
+  - Nível 2
+    - Primeira Fase
+    - Segunda Fase
+
