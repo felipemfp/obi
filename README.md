@@ -11,10 +11,10 @@ Repositório de soluções.
 - Modalidade Programação
   - Nível 1
     - [Primeira Fase](/obi2014/programacao-1/fase-1)
-      - [ ] Triângulo
-      - [ ] Setas
-      - [ ] Semente
-      - [ ] Letras
+      - [x] Triângulo
+      - [x] Setas
+      - [x] Semente
+      - [x] Letras
     - [Segunda Fase](/obi2014/programacao-1/fase-2)
       - [ ] Decifra
       - [ ] Quadrado
