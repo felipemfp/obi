@@ -79,11 +79,11 @@ Repositório de soluções.
       - [x] Vice-campeão
       - [x] Corrida
       - [x] Consecutivos
-    - [Segunda Fase](/obi2012/programacao-2/fase-1)
+    - Segunda Fase
+  - Nível 2
+    - [Primeira Fase](/obi2012/programacao-2/fase-1)
       - [x] Colchão
       - [x] O tabuleiro esburacado
       - [x] Frequência na aula
       - [x] Tarzan
-  - Nível 2
-    - Primeira Fase
     - Segunda Fase
