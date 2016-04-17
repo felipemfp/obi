@@ -16,8 +16,8 @@ Repositório de soluções.
       - [x] Semente
       - [x] Letras
     - [Segunda Fase](/obi2014/programacao-1/fase-2)
-      - [ ] Decifra
-      - [ ] Quadrado
+      - [x] Decifra
+      - [x] Quadrado
       - [ ] Corredor
       - [ ] Jogo da Memória
   - Nível 2
