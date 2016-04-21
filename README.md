@@ -79,7 +79,10 @@ Repositório de soluções.
       - [x] Vice-campeão
       - [x] Corrida
       - [x] Consecutivos
-    - Segunda Fase
+    - [Segunda Fase](/obi2012/programacao-1/fase-2)
+      - [x] Carnaval
+      - [x] Costa
+      - [x] Guerra por território
   - Nível 2
     - [Primeira Fase](/obi2012/programacao-2/fase-1)
       - [x] Colchão
