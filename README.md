@@ -89,4 +89,8 @@ Repositório de soluções.
       - [x] O tabuleiro esburacado
       - [x] Frequência na aula
       - [x] Tarzan
-    - Segunda Fase
+    - [Segunda Fase](/obi2012/programacao-2/fase-2)
+      - [x] Álbum
+      - [ ] Banco
+      - [x] Soma
+      - [ ] Bomba
