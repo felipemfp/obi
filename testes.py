@@ -13,28 +13,28 @@ class Colors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+
 def get_tests_results(question):
     main_folder = question
-    script = "{0}.py".format(question)
+    script = '{0}.py'.format(question)
 
-    tests = [test for test in listdir(main_folder)]
+    tests = listdir(main_folder)
     right_answers = 0
     total_answers = 0
 
-    # sys.stdout.write('{}.py\n\t'.format(question.split('/')[-1]))
     for test_folder in tests:
-
-        test_folder_name = "{0}/{1}".format(main_folder, test_folder)
+        test_folder_name = '{0}/{1}'.format(main_folder, test_folder)
         tests_cases = [case for case in listdir(test_folder_name)]
         for index in range(int(len(tests_cases) / 2)):
-            case_input_name = "{0}/{1}{2}".format(
-                test_folder_name, "in", index + 1)
-            case_output_name = "{0}/{1}{2}".format(
-                test_folder_name, "out", index + 1)
+            case_input_name = '{0}/{1}{2}'.format(
+                test_folder_name, 'in', index + 1)
+            case_output_name = '{0}/{1}{2}'.format(
+                test_folder_name, 'out', index + 1)
             input_file = open(case_input_name)
             proc = subprocess.Popen(
-                ["python", script], stdin=input_file, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-            result = proc.communicate()[0].decode("utf-8").strip()
+                ['python', script], stdin=input_file,
+                stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            result = proc.communicate()[0].decode('utf-8').strip()
             output_file = open(case_output_name).read().strip()
 
             if result == output_file:
@@ -47,28 +47,34 @@ def get_tests_results(question):
 
     return right_answers, total_answers
 
-if __name__ == "__main__":
-    obis = [f for f in listdir(".") if path.isdir(f) and ("obi" in f)]
-
+if __name__ == '__main__':
+    is_successful = True
+    obis = [f for f in listdir('.') if path.isdir(f) and ('obi' in f)]
+    obis.sort()
     for obi in obis:
         print(obi.upper())
-        levels = [f for f in listdir(obi)]
+        levels = listdir(obi)
         for level in levels:
-            print(" {0}".format(level))
-            level = "{0}/{1}".format(obi, level)
-            stages = [f for f in listdir(level)]
+            print(' {0}'.format(level))
+            level = '{0}/{1}'.format(obi, level)
+            stages = listdir(level)
             for stage in stages:
-                print("  {0}".format(stage))
-                stage = "{0}/{1}".format(level, stage)
-                questions = [f for f in listdir(stage) if f.endswith("py")]
+                print('  {0}'.format(stage))
+                stage = '{0}/{1}'.format(level, stage)
+                questions = [f for f in listdir(stage) if f.endswith('.py')]
                 for question in questions:
                     name = question
-                    print("   {0} ".format(name), end="")
-                    question = "{0}/{1}".format(stage, question)
-                    folder = "{0}/{1}".format(stage, path.splitext(name)[0])
+                    print('   {0} '.format(name), end='')
+                    question = '{0}/{1}'.format(stage, question)
+                    folder = '{0}/{1}'.format(stage, path.splitext(name)[0])
                     if path.isdir(folder):
                         right_answers, total_answers = get_tests_results(folder)
+                        if right_answers < total_answers:
+                            is_successful = False
                         color = Colors.GREEN if right_answers == total_answers else Colors.FAIL
-                        print("   {1}/{2}".format(name,right_answers, total_answers), end='')
+                        print('   {1}/{2}'.format(name,right_answers, total_answers), end='')
 
-                    print("")
+                    print('')
+    if not is_successful:
+        exit(1)
+    exit(0)
