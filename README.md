@@ -1,5 +1,6 @@
-# Olimpíada Brasileira de Informática
-_Repositório de soluções._
+# Olimpíada Brasileira de Informática [![Build Status](https://travis-ci.org/felipemfp/obi.svg?branch=master)](https://travis-ci.org/felipemfp/obi) 
+
+_Repositório de soluções._ 
 
 ## Conteúdo
 
