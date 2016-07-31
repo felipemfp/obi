@@ -21,15 +21,15 @@ cache = {}
 
 def get_cache():
     try:
-        with open('.cache/results.dat', 'rb') as afile:
+        with open('tests/results.dat', 'rb') as afile:
             if afile:
                 global cache
                 cache = pickle.load(afile)
     except FileNotFoundError:
-        os.makedirs('.cache')
+        os.makedirs('tests')
 
 def save_cache():
-    afile = open('.cache/results.dat', 'wb')
+    afile = open('tests/results.dat', 'wb')
     pickle.dump(cache, afile)
 
 
