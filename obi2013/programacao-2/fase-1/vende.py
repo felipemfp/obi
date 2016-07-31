@@ -1,23 +1,20 @@
-# status: testado com exemplos da prova
+def combinations(lst, r):
+    result = set()
+    for x in range(r):
+        a = tuple(lst[x:x + r])
+        if len(a) == r:
+            result.add(a)
+    return result
 
 if __name__ == '__main__':
-    N, K = [int(x) for x in input().strip().split(' ')]
-    buildings = sorted([int(x) for x in input().strip().split(' ')])
+    N, K = (int(x) for x in input().split())
+    buildings = sorted([int(x) for x in input().split()])
 
-    distance = buildings[-1]
-    builds = 1
-    max_builds = N - K
-    last_build = 0
-    last_distance = buildings[-1]
+    minor = buildings[-1] - buildings[0]
 
-    for building in buildings:
-        if building - last_build < last_distance and max_builds - 1 <= len(buildings) - buildings.index(building):
-            distance = building - last_build
-            builds = 1
-        elif builds < max_builds - 1:
-            distance += building - last_build
-            builds += 1
-        last_distance = building - last_build
-        last_build = building
+    for x in combinations(buildings, N - K):
+        distance = x[-1] - x[0]
+        if distance < minor:
+            minor = distance
 
-    print(distance)
+    print(minor)

@@ -1,6 +1,6 @@
-# Olimpíada Brasileira de Informática [![Build Status](https://travis-ci.org/felipemfp/obi.svg?branch=master)](https://travis-ci.org/felipemfp/obi) 
+# Olimpíada Brasileira de Informática [![Build Status](https://travis-ci.org/felipemfp/obi.svg?branch=master)](https://travis-ci.org/felipemfp/obi)
 
-_Repositório de soluções._ 
+_Repositório de soluções._
 
 ## Conteúdo
 
@@ -13,9 +13,9 @@ _Repositório de soluções._
 - Modalidade Programação
   - Nível 1
     - [Primeira Fase](/obi2015/programacao-1/fase-1)
-      - [ ] Móbile
+      - [x] Móbile
       - [ ] Linhas Cruzadas
-      - [ ] Fita Colorida
+      - [x] Fita Colorida
       - [ ] Arquivos
     - [Segunda Fase](/obi2015/programacao-1/fase-2)
       - [ ] Impedimento!

@@ -1,34 +1,24 @@
 # status: testado com exemplos da prova
 
-def look_for(list, x):
-    for item in list:
-        if item[0] == x:
-            return item
-    return None
-
 if __name__ == '__main__':
-    n = int(input().strip())
+    n = int(input())
     highways = []
 
-    for x in range(0, n):
-        highways.append(input().strip().split(' '))
+    for x in range(n):
+        highways.append([int(y) for y in input().split()])
 
-    initial = highways[0][0]
-    result = True
-    current = [initial,]
-
-    while highways:
-        if initial == current[-1] and len(current) == n:
-            break
-        else:
-            highway = look_for(highways, current[-1])
-            if highway == None:
-                result = False
+    for x in range(1, n + 1):
+        left = False
+        arrive = False
+        for y in highways:
+            if y[0] == x:
+                left = True
+            if y[1] == x:
+                arrive = True
+            if left and arrive:
                 break
-            highways.remove(highway)
-            current.append(highway[1])
+        if not(left and arrive):
+            print('N')
+            exit()
 
-    if result:
-        print('S')
-    else:
-        print('N')
+    print('S')
