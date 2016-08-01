@@ -17,14 +17,14 @@ def move(map, line, column):
 
 
 if __name__ == '__main__':
-    L, C = map(int, input().split(' '))
-    il, ic = map(int, input().split(' '))
+    L, C = map(int, input().split())
+    il, ic = map(int, input().split())
     il -= 1
     ic -= 1
     map = []
 
     for x in range(L):
-        map.append([int(v) for v in input().split(' ')])
+        map.append([int(v) for v in input().split()])
 
     finished = False
     while not finished:

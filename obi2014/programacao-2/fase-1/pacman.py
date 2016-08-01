@@ -1,5 +1,6 @@
 # status: testado com exemplos da prova
 
+
 def walk(pacman, side):
     if pacman[0] % 2:
         if pacman[1] == 0:

@@ -1,7 +1,7 @@
 # status: testado com exemplos da prova
 
 if __name__ == '__main__':
-    f1, f2, f3 = sorted([int(x) for x in input().split(' ')])
+    f1, f2, f3 = sorted([int(x) for x in input().split()])
 
     HEIGHT = 100
     WINDOW_WIDTH = 600
@@ -20,7 +20,7 @@ if __name__ == '__main__':
     else:
         open_area -= (piece_2[1] - piece_2[0]) * HEIGHT
 
-    if piece_3[0] <= piece_2[1]:
+    if piece_3[0] < piece_2[1]:
         open_area -= (piece_3[1] - piece_2[1]) * HEIGHT
     else:
         open_area -= (piece_3[1] - piece_3[0]) * HEIGHT

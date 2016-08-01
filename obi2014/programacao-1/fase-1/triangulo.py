@@ -5,7 +5,7 @@ if __name__ == '__main__':
 
     can = False
 
-    groups = [(0,1,2), (0,1,3), (0,2,3), (1,2,3)]
+    groups = [(0, 1, 2), (0, 1, 3), (0, 2, 3), (1, 2, 3)]
 
     for g in groups:
         if stickes[g[0]] < stickes[g[1]] + stickes[g[2]] and \

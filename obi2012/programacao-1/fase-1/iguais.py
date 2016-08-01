@@ -1,8 +1,8 @@
 # status: testado com exemplos da prova
 
 if __name__ == '__main__':
-    N = input().strip()
-    values = [int(x) for x in input().strip().split(' ')]
+    N = input()
+    values = [int(x) for x in input().split()]
 
     max_record = 0
     last_record = 0

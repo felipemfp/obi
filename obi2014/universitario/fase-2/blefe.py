@@ -1,10 +1,10 @@
 # status: testado com exemplos da prova
 
 if __name__ == '__main__':
-    len_a, len_b = [int(x) for x in input().strip().split(' ')]
+    len_a, len_b = (int(x) for x in input().split())
 
-    a = [int(x) for x in input().strip().split(' ')]
-    b = [int(x) for x in input().strip().split(' ')]
+    a = [int(x) for x in input().split()]
+    b = [int(x) for x in input().split()]
 
     result = 'sim'
 

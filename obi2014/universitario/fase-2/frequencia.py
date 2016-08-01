@@ -1,12 +1,12 @@
 # status: testado com exemplos da prova
 
 if __name__ == '__main__':
-    size, count_commands = (int(c) for c in input().strip().split(' '))
+    size, count_commands = (int(c) for c in input().split())
 
     commands = []
 
     for x in range(0, count_commands):
-        commands.append([int(c) for c in input().strip().split(' ')])
+        commands.append([int(c) for c in input().split()])
 
     board = {}
 
@@ -28,7 +28,8 @@ if __name__ == '__main__':
                     frequencies[board[command[1] - 1, x]] = 1
                 else:
                     frequencies[board[command[1] - 1, x]] += 1
-            print(sorted([x for x in frequencies.keys() if frequencies[x] == max(frequencies.values())])[-1])
+            print(sorted([x for x in frequencies.keys() if frequencies[
+                  x] == max(frequencies.values())])[-1])
         elif command[0] == 4:
             frequencies = {}
             for x in range(0, size):
@@ -36,4 +37,5 @@ if __name__ == '__main__':
                     frequencies[board[x, command[1] - 1]] = 1
                 else:
                     frequencies[board[x, command[1] - 1]] += 1
-            print(sorted([x for x in frequencies.keys() if frequencies[x] == max(frequencies.values())])[-1])
+            print(sorted([x for x in frequencies.keys() if frequencies[
+                  x] == max(frequencies.values())])[-1])

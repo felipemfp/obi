@@ -1,10 +1,12 @@
 # status: testado com exemplos da prova
 
+
 def is_open(pins, ideal_height):
     for pin in pins:
         if pin != ideal_height:
             return False
     return True
+
 
 def right_or_left(pins, index, ideal_height):
     left, right = index - 1, index + 1
@@ -14,13 +16,13 @@ def right_or_left(pins, index, ideal_height):
 
 
 if __name__ == '__main__':
-    pins_count, ideal_height = (int(v) for v in input().strip().split(' '))
-    pins = [int(v) for v in input().strip().split(' ')]
+    pins_count, ideal_height = (int(v) for v in input().split())
+    pins = [int(v) for v in input().split()]
 
     moves = 0
 
     while not is_open(pins, ideal_height):
-        ind = pins.index(sorted([p for p in pins if p != ideal_height])[0]);
+        ind = pins.index(sorted([p for p in pins if p != ideal_height])[0])
         pin = pins[ind]
         pin_right = pins[ind + 1] if ind < len(pins) - 1 else None
         pin_left = pins[ind - 1] if ind > 0 else None

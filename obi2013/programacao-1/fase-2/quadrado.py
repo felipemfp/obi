@@ -2,7 +2,7 @@
 
 if __name__ == '__main__':
     n = int(input())
-    cubes = [int(x) for x in input().split(' ')]
+    cubes = [int(x) for x in input().split()]
 
     ways = 0
 

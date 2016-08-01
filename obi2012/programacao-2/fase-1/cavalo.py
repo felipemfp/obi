@@ -1,5 +1,6 @@
 # status: testado com exemplos da prova
 
+
 def move_piece(position, number):
     if number == 1:
         return position[0] + 1, position[1] + 2
@@ -28,7 +29,7 @@ if __name__ == '__main__':
     horse_position = (4, 3)
 
     N = int(input().strip())
-    moves = [int(x) for x in input().strip().split(' ')]
+    moves = [int(x) for x in input().split()]
 
     for move in moves:
         moves_count += 1

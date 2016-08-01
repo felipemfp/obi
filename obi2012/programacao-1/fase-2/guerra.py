@@ -2,9 +2,9 @@
 
 if __name__ == '__main__':
     N = int(input().strip())
-    values = [int(x) for x in input().strip().split(' ')]
+    values = [int(x) for x in input().split()]
 
-    for x in range(len(values)):
+    for x in range(int(N)):
         if sum(values[:x]) == sum(values[x:]):
             print(x)
             break

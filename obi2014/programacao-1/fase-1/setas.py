@@ -4,6 +4,7 @@ board = {}
 track = {}
 insecure_cells = 0
 
+
 def walk(current):
     row, col = current[0], current[1]
     try:

@@ -1,5 +1,6 @@
 # status: testado com exemplos da prova
 
+
 def is_coast(island, place):
     x, y = place[0], place[1]
     lines = len(island)
@@ -19,7 +20,7 @@ def is_coast(island, place):
 
 
 if __name__ == '__main__':
-    lines, columns = [int(x) for x in input().strip().split(' ')]
+    lines, columns = (int(x) for x in input().split())
     coasts = 0
     island = []
     for x in range(lines):

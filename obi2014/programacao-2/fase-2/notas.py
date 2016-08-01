@@ -2,7 +2,7 @@
 
 if __name__ == '__main__':
     students = int(input().strip())
-    scores = [int(s) for s in input().strip().split(' ')]
+    scores = [int(s) for s in input().split()]
 
     score_frequencies = {}
 
@@ -12,4 +12,5 @@ if __name__ == '__main__':
             pass
         score_frequencies[score] += 1
 
-    print(sorted([x for x in score_frequencies.keys() if score_frequencies[x] == max(score_frequencies.values())])[-1])
+    print(sorted([x for x in score_frequencies.keys() if score_frequencies[
+          x] == max(score_frequencies.values())])[-1])

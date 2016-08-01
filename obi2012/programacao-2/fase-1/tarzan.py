@@ -9,7 +9,7 @@ if __name__ == '__main__':
     possible_trees = set()
 
     for x in range(N):
-        trees.append(tuple([int(x) for x in input().strip().split()]))
+        trees.append(tuple([int(x) for x in input().split()]))
 
     for x in range(N):
         for y in range(N):

@@ -3,6 +3,7 @@ import pickle
 import os
 import sys
 import subprocess
+import time
 
 
 class Colors:
@@ -17,7 +18,7 @@ class Colors:
 
 
 cache = {}
-
+hashes = []
 
 def get_cache():
     try:
@@ -29,6 +30,9 @@ def get_cache():
         os.makedirs('tests')
 
 def save_cache():
+    ks = [k for k in cache.keys() if not k in hashes]
+    for k in ks:
+        del cache[k]
     afile = open('tests/results.dat', 'wb')
     pickle.dump(cache, afile)
 
@@ -41,9 +45,10 @@ def get_tests_results(question):
     hasher = hashlib.md5()
     with open(script, 'rb') as f:
         hasher.update(f.read())
-    if script in cache:
-        if cache[script]['hash'] == hasher.digest():
-            return cache[script]['results']
+    hsh = hasher.digest()
+    hashes.append(hsh)
+    if hsh in cache:
+        return cache[hsh]
 
     tests = os.listdir(main_folder)
     right_answers = 0
@@ -72,10 +77,8 @@ def get_tests_results(question):
             total_answers += 1
             sys.stdout.flush()
 
-    cache[script] = {}
-    cache[script]['hash'] = hasher.digest()
-    cache[script]['results'] = (right_answers, total_answers)
-    return cache[script]['results']
+    cache[hsh] = (right_answers, total_answers)
+    return cache[hsh]
 
 if __name__ == '__main__':
     is_successful = True
@@ -94,6 +97,7 @@ if __name__ == '__main__':
                 stage = '{0}/{1}'.format(level, stage)
                 questions = [f for f in os.listdir(stage) if f.endswith('.py')]
                 for question in questions:
+                    s = time.time()
                     name = question
                     print('   {0} '.format(name), end='')
                     question = '{0}/{1}'.format(stage, question)
@@ -105,7 +109,7 @@ if __name__ == '__main__':
                         color = Colors.GREEN if right_answers == total_answers else Colors.FAIL
                         print('   {1}/{2}'.format(name,right_answers, total_answers), end='')
 
-                    print('')
+                    print(' [{:.2f}s]'.format(time.time() - s))
     save_cache()
     if not is_successful:
         exit(1)

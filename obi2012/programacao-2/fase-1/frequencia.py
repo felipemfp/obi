@@ -3,9 +3,9 @@
 if __name__ == '__main__':
     N = int(input().strip())
 
-    registers = []
+    registers = set()
 
     for x in range(N):
-        registers.append(int(input().strip()))
+        registers.add(int(input().strip()))
 
-    print(len(set(registers)))
+    print(len(registers))

@@ -1,5 +1,6 @@
 # status: testado com exemplos da prova
 
+
 def find_m(rows):
     result = {}
     for r in rows:
@@ -11,17 +12,21 @@ def find_m(rows):
                 result[sum(r)] += 1
         else:
             break
-    return sorted([x for x in result.keys() if result[x] == max(result.values())])[-1]
+    mx = max(result.values())
+    return sorted([x for x in result.keys() if result[x] == mx])[-1]
+
 
 def find_wrong_row(rows, m):
     for x in range(0, len(rows)):
         if sum(rows[x]) != m:
             return x
 
+
 def find_wrong_col(rows, m):
-    for x in range(0, len(rows)):
+    ln = len(rows)
+    for x in range(0, ln):
         s = 0
-        for y in range(0, len(rows)):
+        for y in range(0, ln):
             s += rows[y][x]
         if s != m:
             return x
@@ -31,7 +36,7 @@ if __name__ == '__main__':
     n = int(input())
     rows = []
     for x in range(0, n):
-        rows.append([int(x) for x in input().split(' ')])
+        rows.append([int(x) for x in input().split()])
 
     m = find_m(rows)
     wrong_row = find_wrong_row(rows, m)

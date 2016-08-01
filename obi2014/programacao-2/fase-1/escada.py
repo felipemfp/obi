@@ -1,7 +1,7 @@
 # status: testado com exemplos da prova
 
 if __name__ == '__main__':
-    size = input().strip().split()
+    size = input().split()
     row, column = int(size[0]), int(size[-1])
     rows = []
     for x in range(row):
